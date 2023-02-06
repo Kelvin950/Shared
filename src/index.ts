@@ -11,3 +11,6 @@ const color:color={
     blue:12,
     green:12
 }
+
+
+export default color; 
