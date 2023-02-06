@@ -1,5 +1,5 @@
 import  {NextFunction, Request , Response,} from 'express'
-import ParentError from "../utils/ErrorClass";
+import {ParentError} from "../utils/ErrorClass";
 export const errorHandler = (error:any ,req:Request , res:Response, next:NextFunction)=>{
       
     if(error instanceof ParentError){

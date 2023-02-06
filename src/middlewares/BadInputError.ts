@@ -1,8 +1,8 @@
 import { error } from "../utils/error.interface";
-import ParentError from "../utils/ErrorClass";
+import {ParentError} from "../utils/ErrorClass";
 
 
-class BadInputError extends  ParentError{
+export class BadInputError extends  ParentError{
 
       
      constructor(public message:string , public code:number){
@@ -21,4 +21,3 @@ class BadInputError extends  ParentError{
 
 }
 
-export default  BadInputError
