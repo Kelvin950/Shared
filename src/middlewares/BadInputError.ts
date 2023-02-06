@@ -1,5 +1,5 @@
-import { error } from "@utils/error.interface";
-import ParentError from "@utils/ErrorClass";
+import { error } from "../utils/error.interface";
+import ParentError from "../utils/ErrorClass";
 
 
 class BadInputError extends  ParentError{

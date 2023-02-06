@@ -1,4 +1,4 @@
-import {error} from '@utils/error.interface'
+import {error} from '../utils/error.interface'
 
 
 
