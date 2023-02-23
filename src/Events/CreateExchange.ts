@@ -15,7 +15,7 @@ protected exchangeType ="topic";
  abstract  routingKey:T["routingKeys"]
 
 
-abstract onMessage():void 
+
  abstract  assertExchange():Promise<void>
        
  

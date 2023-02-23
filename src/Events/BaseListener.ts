@@ -21,11 +21,21 @@ abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
  }
 
 
- abstract 
+ abstract  OnMessage:void ;
  async assertExchange(): Promise<void> {
-     
+      
+
+    await this.channel.assertExchange(this.exchangeName , this.exchangeType , {durable:false}); 
+
+   const queue = await this.channel.assertQueue("" , {exclusive:true}); 
+
+    this.channel.bindQueue(queue.queue , this.exchangeName , this.routingKey );
+
 
  }
+
+
+  listen()
 
 
 }
