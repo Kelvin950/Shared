@@ -16,7 +16,7 @@ protected exchangeType ="topic";
 
 
 
- abstract  assertExchange():Promise<void>
+ abstract  assertExchange():Promise<void|string> 
        
  
 
