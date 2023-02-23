@@ -32,6 +32,8 @@
     "node_modules_custom"
   ],
   "dependencies": {
+    "@types/amqplib": "^0.10.1",
+    "amqplib": "^0.10.3",
     "express": "^4.18.2"
   }
 }
