@@ -10,7 +10,7 @@ interface  BaseListenerEvents extends CreateExchangeEvent{
 }
 
  
-abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
+export abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
     private channel;
 

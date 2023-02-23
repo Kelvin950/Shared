@@ -8,7 +8,7 @@ interface BasePublisherEvents extends CreateExchangeEvent{
 
 }
 
-abstract class BasePublisher extends CreateExchange<BasePublisherEvents>{
+export abstract class BasePublisher extends CreateExchange<BasePublisherEvents>{
  
  private channel:Channel;
 
