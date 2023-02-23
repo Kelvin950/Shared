@@ -38,7 +38,7 @@ abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
  async listen(){
 
-     await this.assertExchange(); 
+     const queueName =  await this.assertExchange(); 
 
        this.channel.consume(queueName , (msg:BaseListenerEvents["msg"])=>{
 
@@ -49,3 +49,5 @@ abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
 
 }
+
+expo
