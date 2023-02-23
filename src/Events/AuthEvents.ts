@@ -2,10 +2,10 @@ import {BaseEvents} from  './BaseEvents.listener';
 import {RoutingKeys} from './RoutingKeys'
 export interface AuthEvent extends BaseEvents{
  
-    routingKey:RoutingKeys.Auth
+    routingKey:RoutingKeys.auth
     msg:{
-        id:number ;
-        email:number;
+        id:string ;
+        name:string;
     }
 
 }
