@@ -20,9 +20,12 @@ abstract class CreateExchange<T extends CreateExchangeEvent>{
         this.Channel=channel;
  }
 
+ abstract  assertExchange():Promise<void>
  
  
 
 
 
 }
+
+export default CreateExchange;
