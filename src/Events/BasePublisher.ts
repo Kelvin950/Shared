@@ -1,15 +1,12 @@
 import {Channel} from 'amqplib';
 import   CreateExchange  from './CreateExchange';
 import { RoutingKeys } from './RoutingKeys';
+import { BaseEvents } from "./BaseEvents.listener";
 
 
-interface BasePublisherEvents {
-    routingKey:RoutingKeys;
-    msg:any
 
-}
 
-export abstract class BasePublisher<T extends  BasePublisherEvents> extends CreateExchange{
+export abstract class BasePublisher<T extends  BaseEvents> extends CreateExchange{
  
  private channel;
 

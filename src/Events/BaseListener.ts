@@ -1,17 +1,9 @@
 import { Channel } from "amqplib";
 import CreateExchange from "./CreateExchange";
  import {RoutingKeys} from './RoutingKeys';
-
-interface  BaseListenerEvents{
-
-  routingKey:RoutingKeys
-    msg:any
+import {BaseEvents} from  './BaseEvents.listener';
  
-
-}
-
- 
-export abstract class BaseListener<T extends BaseListenerEvents> extends CreateExchange{
+export abstract class BaseListener<T extends BaseEvents> extends CreateExchange{
 
     private channel;
 
@@ -24,7 +16,7 @@ export abstract class BaseListener<T extends BaseListenerEvents> extends CreateE
  }
 
 
- abstract  OnMessage(msg:BaseListenerEvents["msg"], channel:Channel):void ;
+ abstract  OnMessage(msg:T["msg"], channel:Channel):void ;
  async assertExchange(): Promise<string> {
       
 
