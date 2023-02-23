@@ -1,24 +1,25 @@
 import {Channel} from 'amqplib';
-import   CreateExchange , {CreateExchangeEvent} from './CreateExchange';
+import   CreateExchange  from './CreateExchange';
+import { RoutingKeys } from './RoutingKeys';
 
 
-interface BasePublisherEvents extends CreateExchangeEvent{
-
+interface BasePublisherEvents {
+    routingKey:RoutingKeys;
     msg:any
 
 }
 
-export abstract class BasePublisher extends CreateExchange<BasePublisherEvents>{
+export abstract class BasePublisher<T extends  BasePublisherEvents> extends CreateExchange{
  
- private channel:Channel;
+ private channel;
 
-
+  abstract routingKey:T["routingKey"];
     constructor(channel:Channel){
            super();
  this.channel = channel;
     }
   
-   
+
 
 
  async assertExchange(): Promise<void> {

@@ -1,18 +1,14 @@
 import  {RoutingKeys} from './RoutingKeys'
 import {Channel} from 'amqplib'
  
-export interface CreateExchangeEvent{
-    routingKeys:RoutingKeys ;
-    
-}
 
-abstract class CreateExchange<T extends CreateExchangeEvent>{
+abstract class CreateExchange{
 
 
 protected exchangeName = "Topic_Exchange" ;
 protected exchangeType ="topic"; 
 
- abstract  routingKey:T["routingKeys"]
+
 
 
 
