@@ -28,7 +28,7 @@ export abstract class BasePublisher<T extends  BasePublisherEvents> extends Crea
 
 }
 
-async Publish(msg:BasePublisherEvents["msg"]){
+async Publish(msg:T["msg"]){
   
     await this.assertExchange();
     this.channel.publish(this.exchangeName , this.routingKey, Buffer.from(JSON.stringify(msg)));

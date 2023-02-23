@@ -1,18 +1,21 @@
 import { Channel } from "amqplib";
-import CreateExchange, { CreateExchangeEvent } from "./CreateExchange";
- 
+import CreateExchange from "./CreateExchange";
+ import {RoutingKeys} from './RoutingKeys';
 
-interface  BaseListenerEvents extends CreateExchangeEvent{
+interface  BaseListenerEvents{
 
+  routingKey:RoutingKeys
     msg:any
  
 
 }
 
  
-export abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
+export abstract class BaseListener<T extends BaseListenerEvents> extends CreateExchange{
 
     private channel;
+
+    abstract  routingKey:T["routingKey"];
 
  constructor(channel:Channel){
     super();
@@ -40,7 +43,7 @@ export abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
      const queueName =  await this.assertExchange(); 
 
-       this.channel.consume(queueName , (msg:BaseListenerEvents["msg"])=>{
+       this.channel.consume(queueName , (msg:T["msg"])=>{
 
             this.OnMessage(msg , this.channel)
        })
@@ -50,4 +53,3 @@ export abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
 }
 
-export default  BaseListener;
