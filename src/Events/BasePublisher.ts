@@ -10,21 +10,27 @@ interface BasePublisherEvents extends CreateExchangeEvent{
 
 abstract class BasePublisher extends CreateExchange<BasePublisherEvents>{
  
- 
+ private channel:Channel;
+
+
+    constructor(channel:Channel){
+           super();
+ this.channel = channel;
+    }
   
    
 
 
  async assertExchange(): Promise<void> {
     
-    await this.Channel.assertExchange(this.exchangeName , this.exchangeType , {durable:false});
+    await this.channel.assertExchange(this.exchangeName , this.exchangeType , {durable:false});
 
 }
 
 async Publish(msg:BasePublisherEvents["msg"]){
   
     await this.assertExchange();
-    this.Channel.publish(this.exchangeName , this.routingKey, Buffer.from(JSON.stringify(msg)));
+    this.channel.publish(this.exchangeName , this.routingKey, Buffer.from(JSON.stringify(msg)));
 
      
 }
