@@ -50,4 +50,4 @@ abstract class BaseListener extends CreateExchange<BaseListenerEvents>{
 
 }
 
-expo
+export default  BaseListener;
