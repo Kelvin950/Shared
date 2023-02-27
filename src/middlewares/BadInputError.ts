@@ -7,7 +7,7 @@ export class BadInputError extends  ParentError{
       
      constructor(public message:string , public code:number){
         super(message , code) ; 
-        Object.setPrototypeOf(this, BadInputError);
+        Object.setPrototypeOf(this, BadInputError.prototype);
      }
 
 

@@ -9,7 +9,7 @@ export class AuthError extends  ParentError{
 
             super(msg , code) ; 
 
-            Object.setPrototypeOf(this , AuthError)
+            Object.setPrototypeOf(this , AuthError.prototype)
           }   
 
 
