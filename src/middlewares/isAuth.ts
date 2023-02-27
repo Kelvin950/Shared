@@ -2,12 +2,9 @@ import jwt from 'jsonwebtoken';
 import  {NextFunction, Request , Response}  from 'express'
 import  {AuthError} from './AuthError'
 import { json } from 'stream/consumers';
+import  {Payload} from '../interfaces/Payload.interface'
 
-interface Payload {
-id:string ,
-email:string
 
-}
 
 declare global{
      

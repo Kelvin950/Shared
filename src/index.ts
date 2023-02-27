@@ -1,6 +1,7 @@
 export * from './middlewares/BadInputError';
 export * from './middlewares/AuthError';
 export * from './middlewares/isAuth';
+export * from './interfaces/Payload.interface' ;
 export * from './middlewares/errorHanlder';
 export * from './utils/ErrorClass';
 export * from './Events/BaseListener'
