@@ -33,7 +33,9 @@
   ],
   "dependencies": {
     "@types/amqplib": "^0.10.1",
+    "@types/jsonwebtoken": "^9.0.1",
     "amqplib": "^0.10.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
   }
 }
