@@ -2,8 +2,8 @@
 export enum RoutingKeys{
 
 first ="First.fiest",
-auth =  "Auth.Auth"
-
+auth =  "Auth.Auth" ,
+storeCreated = "Store.created"
 
 
 }
