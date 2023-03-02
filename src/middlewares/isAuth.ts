@@ -10,7 +10,7 @@ declare global{
      
     namespace Express{
 
-     interface   Request{
+     interface Request{
             user?: Payload
         }
     }
@@ -20,8 +20,8 @@ export function isAuth(req:Request , res:Response ,next:NextFunction){
 
 
 
-    const [_, token] =  req.headers["authorization"]?.split(" ")!;
-          
+    // const [_, token] =  req.headers["authorization"]?.split(" ")!;
+          let token ="cd";
         if(!token){
              
             throw new AuthError("You are not authenticated" , 403) ;
