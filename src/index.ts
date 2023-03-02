@@ -7,3 +7,4 @@ export * from './utils/ErrorClass';
 export * from './Events/BaseListener'
 export * from './Events/BasePublisher';
 export * from './Events/RoutingKeys'
+export * from './Events/storeCreateEvent';
