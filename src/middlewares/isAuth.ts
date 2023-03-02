@@ -24,7 +24,7 @@ export function isAuth(req:Request , res:Response ,next:NextFunction){
     if(!req.headers["authorization"])   throw new AuthError("You are not authenticated" , 403) ; 
 
    const [_, token] =  req.headers["authorization"]?.split(" ");
-         
+         console.log(token)
         if(!token){
              
             throw new AuthError("You are not authenticated" , 403) ;
@@ -36,7 +36,7 @@ export function isAuth(req:Request , res:Response ,next:NextFunction){
 
         try {
               
-        payload =  jwt.verify(token , process.env.JWT_KEY!) as Payload; 
+        payload =  jwt.verify(token , process.env.JWT_SECRET!) as Payload; 
              
           
         req.user =  payload;
@@ -45,6 +45,7 @@ export function isAuth(req:Request , res:Response ,next:NextFunction){
 
         } catch (error) {
 
+            console.log(error)
             throw new AuthError("You are not authenticated" , 403)
             
         }
