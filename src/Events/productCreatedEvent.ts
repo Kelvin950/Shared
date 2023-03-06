@@ -5,7 +5,7 @@ export interface productCreatedEvent extends BaseEvents{
       
      RoutingKeys:RoutingKeys.productCreated  ; 
     msg: {
-          id :string ;
+         _id :string ;
           name:string ;
           storeId:string ;
           price:string ;
