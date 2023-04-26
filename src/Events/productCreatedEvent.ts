@@ -9,6 +9,7 @@ export interface productCreatedEvent extends BaseEvents{
           name:string ;
           storeId:string ;
           price:number ;
+          version:number
           description:string
     }
 
